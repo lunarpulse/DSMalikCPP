@@ -171,7 +171,7 @@ template <class T> size_t max_digit(const std::vector<std::shared_ptr<T>>& numer
 {
 	size_t max{};
 	for (auto& number : numericalVector)
-		if (max < numDigits(*number.get())) max = numDigits(*number.get());
+		if (static_cast<int>(max) < numDigits(*number.get())) max = numDigits(*number.get());
 	return max;
 }
 
